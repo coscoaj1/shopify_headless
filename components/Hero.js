@@ -4,20 +4,21 @@ import { Fragment } from "react";
 import { Popover, Transition } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 
-export default function Hero() {
-  const products = [
-    {
-      id: 1,
-      name: "Basic Tee",
-      href: "#",
-      imageSrc:
-        "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg",
-      imageAlt: "Front of men's Basic Tee in black.",
-      price: "$35",
-      color: "Black",
-    },
-    // More products...
-  ];
+export default function Hero({ products }) {
+  console.log({ products });
+  //   const products = [
+  //     {
+  //       id: 1,
+  //       name: "Basic Tee",
+  //       href: "#",
+  //       imageSrc:
+  //         "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg",
+  //       imageAlt: "Front of men's Basic Tee in black.",
+  //       price: "$35",
+  //       color: "Black",
+  //     },
+  //     // More products...
+  //   ];
   return (
     <div>
       <div className="relative bg-white overflow-hidden">
@@ -112,7 +113,7 @@ export default function Hero() {
           Customers also purchased
         </h2>
         <div className="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-          {products.map((product) => (
+          {/* {products.map((product) => (
             <div key={product.id} className="group relative">
               <div className="w-full min-h-80 bg-gray-200 aspect-w-4 aspect-h-3 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
                 <img
@@ -136,7 +137,7 @@ export default function Hero() {
                 </p>
               </div>
             </div>
-          ))}
+          ))} */}
         </div>
       </div>
     </div>
