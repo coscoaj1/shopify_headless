@@ -3,6 +3,7 @@ import Image from "next/image";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 import Footer from "../components/Footer";
+import { storefront } from "../utils";
 
 export default function Home() {
   return (
@@ -17,7 +18,7 @@ export default function Home() {
 const gql = String.raw;
 const productsQuery = gql`
   query Products {
-    products(first: 6) {
+    products(first: 4) {
       edges {
         node {
           title
@@ -42,20 +43,9 @@ const productsQuery = gql`
   }
 `;
 
-async function storefront(query, variables = {}) {
-  const response = await fetch(process.env.NEXT_PUBLIC_API_URL, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "X-Shopify-Storefront-Access-Token": process.env.NEXT_PUBLIC_ACCESS_TOKEN,
-    },
-    body: JSON.stringify({ query, variables }),
-  });
-  return response.json();
-}
-
 export async function getStaticProps() {
   const { data } = await storefront(productsQuery);
+  console.log(data);
   return {
     props: {
       products: data.products,
