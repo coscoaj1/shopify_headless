@@ -88,8 +88,9 @@ export default function Hero({ products }) {
         </div>
         <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
           <Image
-            className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
-            layout="fill"
+            className="object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
+            width={300}
+            height={400}
             src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80"
             alt=""
           />
@@ -101,11 +102,10 @@ export default function Hero({ products }) {
         </h2>
         <div className="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
           {products.edges.map((product) => (
-            <div key={product.id} className="group relative">
+            <div key={product.node.title} className="group relative">
               <div className="w-full min-h-80 bg-gray-200 aspect-w-4 aspect-h-3 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
                 <img
-                  src={product.imageSrc}
-                  alt={product.imageAlt}
+                  src={product.node.images.edges[0].node.transformedSrc}
                   className="w-full h-full object-center object-cover lg:w-full lg:h-full"
                 />
               </div>
@@ -120,7 +120,7 @@ export default function Hero({ products }) {
                   <p className="mt-1 text-sm text-gray-500">{product.color}</p>
                 </div>
                 <p className="text-sm font-medium text-gray-900">
-                  {product.price}
+                  {product.node.priceRange.minVariantPrice.amount}
                 </p>
               </div>
             </div>
