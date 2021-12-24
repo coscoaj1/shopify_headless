@@ -34,7 +34,9 @@ export default function Hero({ products }) {
                       </a>
                       <div className="-mr-2 flex items-center md:hidden">
                         <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
-                          <span className="sr-only">Open main menu</span>
+                          <span className="sr-only text-black">
+                            Open main menu
+                          </span>
                           <MenuIcon className="h-6 w-6" aria-hidden="true" />
                         </Popover.Button>
                       </div>
@@ -91,14 +93,14 @@ export default function Hero({ products }) {
           <Image
             className="sm:h-72 md:h-96 lg:w-full lg:h-full"
             src={backpackImage}
-            width={750}
-            height={750}
+            width={1024}
+            height={768}
           />
         </div>
       </div>
       <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
         <h2 className="text-2xl font-extrabold tracking-tight text-gray-900">
-          Customers also purchased
+          Products
         </h2>
         <div className="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
           {products.edges.map((product) => (
