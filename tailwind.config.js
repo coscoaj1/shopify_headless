@@ -4,7 +4,11 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        "work-sans": "Work Sans, Helvetica, Arial, sans-serif",
+      },
+    },
   },
   plugins: [
     require("@tailwindcss/forms"),
