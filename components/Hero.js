@@ -11,13 +11,13 @@ export default function Hero({ products }) {
     >
       <div className="relative w-full overflow-hidden carousel-inner">
         <input
-          className="carousel-open"
+          className="hidden carousel-open"
           type="radio"
           id="carousel-1"
           name="carousel"
           aria-hidden="true"
           hidden=""
-          checked="checked"
+          defaultChecked={true}
         />
         <div
           className="absolute opacity-0 carousel-item"
@@ -61,7 +61,7 @@ export default function Hero({ products }) {
         </label>
 
         <input
-          className="carousel-open"
+          className="hidden carousel-open"
           type="radio"
           id="carousel-2"
           name="carousel"
@@ -110,7 +110,7 @@ export default function Hero({ products }) {
         </label>
 
         <input
-          className="carousel-open"
+          className="hidden carousel-open"
           type="radio"
           id="carousel-3"
           name="carousel"
