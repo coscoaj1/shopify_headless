@@ -1,94 +1,189 @@
 import React from "react";
 import Image from "next/image";
-import { Fragment } from "react";
-import { Popover, Transition } from "@headlessui/react";
-import { MenuIcon, XIcon } from "@heroicons/react/outline";
-import backpackImage from "../public/images/fredrik-ohlander-m-Xwt_XF6ks-unsplash.jpg";
 import ProductList from "./ProductList";
 
 export default function Hero({ products }) {
   console.log({ products });
   return (
-    <div className="font-work-sans">
-      <div className="relative overflow-hidden bg-white">
-        <div className="mx-auto max-w-7xl">
-          <div className="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
-            <Popover>
-              <div className="relative px-4 pt-6 sm:px-6 lg:px-8">
-                <nav
-                  className="relative flex items-center justify-between sm:h-10 lg:justify-start"
-                  aria-label="Global"
-                >
-                  <div className="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
-                    <div className="flex items-center justify-between w-full md:w-auto">
-                      <a href="#">
-                        <span className="sr-only">Workflow</span>
-                      </a>
-                      <div className="flex items-center -mr-2 md:hidden">
-                        <Popover.Button className="inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
-                          <span className="text-black sr-only">
-                            Open main menu
-                          </span>
-                          <MenuIcon className="w-6 h-6" aria-hidden="true" />
-                        </Popover.Button>
-                      </div>
-                    </div>
-                  </div>
-                </nav>
-              </div>
-              <Transition
-                as={Fragment}
-                enter="duration-150 ease-out"
-                enterFrom="opacity-0 scale-95"
-                enterTo="opacity-100 scale-100"
-                leave="duration-100 ease-in"
-                leaveFrom="opacity-100 scale-100"
-                leaveTo="opacity-0 scale-95"
-              ></Transition>
-            </Popover>
-            <main className="px-4 mx-auto mt-10 max-w-7xl sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
-              <div className="sm:text-center lg:text-left">
-                <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
-                  <span className="block xl:inline"></span> Outdoor
-                  <span className="block text-indigo-600 xl:inline">
-                    Gear Zone
-                  </span>
-                </h1>
-                <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                  Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure
-                  qui lorem cupidatat commodo. Elit sunt amet fugiat veniam
-                  occaecat fugiat aliqua.
+    <div
+      className="container relative mx-auto carousel"
+      style={{ maxWidth: "1600px" }}
+    >
+      <div className="relative w-full overflow-hidden carousel-inner">
+        <input
+          className="carousel-open"
+          type="radio"
+          id="carousel-1"
+          name="carousel"
+          aria-hidden="true"
+          hidden=""
+          checked="checked"
+        />
+        <div
+          className="absolute opacity-0 carousel-item"
+          style={{ height: "50vh" }}
+        >
+          <div
+            className="flex block w-full h-full pt-6 mx-auto bg-right bg-cover md:pt-0 md:items-center"
+            style={{
+              backgroundImage:
+                "url(" +
+                "https://images.unsplash.com/photo-1422190441165-ec2956dc9ecc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1600&q=80" +
+                ")",
+            }}
+          >
+            <div className="container mx-auto">
+              <div className="flex flex-col items-center w-full px-6 tracking-wide lg:w-1/2 md:ml-16 md:items-start">
+                <p className="my-4 text-2xl text-black">
+                  Stripy Zig Zag Jigsaw Pillow and Duvet Set
                 </p>
-                <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
-                  <div className="rounded-md shadow">
-                    <a
-                      href="#"
-                      className="flex items-center justify-center w-full px-8 py-3 text-base font-medium text-white bg-indigo-600 border border-transparent rounded-md hover:bg-indigo-700 md:py-4 md:text-lg md:px-10"
-                    >
-                      Get started
-                    </a>
-                  </div>
-                  <div className="mt-3 sm:mt-0 sm:ml-3">
-                    <a
-                      href="#"
-                      className="flex items-center justify-center w-full px-8 py-3 text-base font-medium text-indigo-700 bg-indigo-100 border border-transparent rounded-md hover:bg-indigo-200 md:py-4 md:text-lg md:px-10"
-                    >
-                      Live demo
-                    </a>
-                  </div>
-                </div>
+                <a
+                  className="inline-block text-xl leading-relaxed no-underline border-b border-gray-600 hover:text-black hover:border-black"
+                  href="#"
+                >
+                  view product
+                </a>
               </div>
-            </main>
+            </div>
           </div>
         </div>
-        <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-          <Image
-            className="sm:h-72 md:h-96 lg:w-full lg:h-full"
-            src={backpackImage}
-            width={1024}
-            height={768}
-          />
+        <label
+          for="carousel-3"
+          className="absolute inset-y-0 left-0 z-10 hidden w-10 h-10 my-auto ml-2 text-3xl font-bold leading-tight text-center text-black bg-white rounded-full cursor-pointer prev control-1 md:ml-10 hover:text-white hover:bg-gray-900"
+        >
+          ‹
+        </label>
+        <label
+          for="carousel-2"
+          className="absolute inset-y-0 right-0 z-10 hidden w-10 h-10 my-auto mr-2 text-3xl font-bold leading-tight text-center text-black bg-white rounded-full cursor-pointer next control-1 md:mr-10 hover:text-white hover:bg-gray-900"
+        >
+          ›
+        </label>
+
+        <input
+          className="carousel-open"
+          type="radio"
+          id="carousel-2"
+          name="carousel"
+          aria-hidden="true"
+          hidden=""
+        />
+        <div
+          className="absolute bg-right bg-cover opacity-0 carousel-item"
+          style={{ height: "50vh" }}
+        >
+          <div
+            className="flex block w-full h-full pt-6 mx-auto bg-right bg-cover md:pt-0 md:items-center"
+            style={{
+              backgroundImage:
+                "url(" +
+                "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjM0MTM2fQ&auto=format&fit=crop&w=1600&q=80" +
+                ")",
+            }}
+          >
+            <div className="container mx-auto">
+              <div className="flex flex-col items-center w-full px-6 tracking-wide lg:w-1/2 md:ml-16 md:items-start">
+                <p className="my-4 text-2xl text-black">
+                  Real Bamboo Wall Clock
+                </p>
+                <a
+                  className="inline-block text-xl leading-relaxed no-underline border-b border-gray-600 hover:text-black hover:border-black"
+                  href="#"
+                >
+                  view product
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
+        <label
+          for="carousel-1"
+          className="absolute inset-y-0 left-0 z-10 hidden w-10 h-10 my-auto ml-2 text-3xl font-bold leading-tight text-center text-black bg-white rounded-full cursor-pointer prev control-2 md:ml-10 hover:text-white hover:bg-gray-900"
+        >
+          ‹
+        </label>
+        <label
+          for="carousel-3"
+          className="absolute inset-y-0 right-0 z-10 hidden w-10 h-10 my-auto mr-2 text-3xl font-bold leading-tight text-center text-black bg-white rounded-full cursor-pointer next control-2 md:mr-10 hover:text-white hover:bg-gray-900"
+        >
+          ›
+        </label>
+
+        <input
+          className="carousel-open"
+          type="radio"
+          id="carousel-3"
+          name="carousel"
+          aria-hidden="true"
+          hidden=""
+        />
+        <div
+          className="absolute opacity-0 carousel-item"
+          style={{ height: "50vh" }}
+        >
+          <div
+            className="flex block w-full h-full pt-6 mx-auto bg-bottom bg-cover md:pt-0 md:items-center"
+            style={{
+              backgroundImage:
+                "url(" +
+                "https://images.unsplash.com/photo-1519327232521-1ea2c736d34d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1600&q=80" +
+                ")",
+            }}
+          >
+            <div className="container mx-auto">
+              <div className="flex flex-col items-center w-full px-6 tracking-wide lg:w-1/2 md:ml-16 md:items-start">
+                <p className="my-4 text-2xl text-black">
+                  Brown and blue hardbound book
+                </p>
+                <a
+                  className="inline-block text-xl leading-relaxed no-underline border-b border-gray-600 hover:text-black hover:border-black"
+                  href="#"
+                >
+                  view product
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <label
+          for="carousel-2"
+          className="absolute inset-y-0 left-0 z-10 hidden w-10 h-10 my-auto ml-2 text-3xl font-bold leading-tight text-center text-black bg-white rounded-full cursor-pointer prev control-3 md:ml-10 hover:text-white hover:bg-gray-900"
+        >
+          ‹
+        </label>
+        <label
+          for="carousel-1"
+          className="absolute inset-y-0 right-0 z-10 hidden w-10 h-10 my-auto mr-2 text-3xl font-bold leading-tight text-center text-black bg-white rounded-full cursor-pointer next control-3 md:mr-10 hover:text-white hover:bg-gray-900"
+        >
+          ›
+        </label>
+
+        <ol className="carousel-indicators">
+          <li className="inline-block mr-3">
+            <label
+              for="carousel-1"
+              className="block text-4xl text-gray-400 cursor-pointer carousel-bullet hover:text-gray-900"
+            >
+              •
+            </label>
+          </li>
+          <li className="inline-block mr-3">
+            <label
+              for="carousel-2"
+              className="block text-4xl text-gray-400 cursor-pointer carousel-bullet hover:text-gray-900"
+            >
+              •
+            </label>
+          </li>
+          <li className="inline-block mr-3">
+            <label
+              for="carousel-3"
+              className="block text-4xl text-gray-400 cursor-pointer carousel-bullet hover:text-gray-900"
+            >
+              •
+            </label>
+          </li>
+        </ol>
       </div>
       <ProductList products={products} />
     </div>
