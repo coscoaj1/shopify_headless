@@ -8,21 +8,12 @@ import backpackImage from "../public/images/fredrik-ohlander-m-Xwt_XF6ks-unsplas
 export default function Hero({ products }) {
   console.log({ products });
   return (
-    <div>
-      <div className="relative bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto">
+    <div className="font-work-sans">
+      <div className="relative overflow-hidden bg-white">
+        <div className="mx-auto max-w-7xl">
           <div className="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
-            <svg
-              className="hidden lg:block absolute right-0 inset-y-0 h-full w-48 text-white transform translate-x-1/2"
-              fill="currentColor"
-              viewBox="0 0 100 100"
-              preserveAspectRatio="none"
-              aria-hidden="true"
-            >
-              <polygon points="50,0 100,0 50,100 0,100" />
-            </svg>
             <Popover>
-              <div className="relative pt-6 px-4 sm:px-6 lg:px-8">
+              <div className="relative px-4 pt-6 sm:px-6 lg:px-8">
                 <nav
                   className="relative flex items-center justify-between sm:h-10 lg:justify-start"
                   aria-label="Global"
@@ -32,12 +23,12 @@ export default function Hero({ products }) {
                       <a href="#">
                         <span className="sr-only">Workflow</span>
                       </a>
-                      <div className="-mr-2 flex items-center md:hidden">
-                        <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
-                          <span className="sr-only text-black">
+                      <div className="flex items-center -mr-2 md:hidden">
+                        <Popover.Button className="inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                          <span className="text-black sr-only">
                             Open main menu
                           </span>
-                          <MenuIcon className="h-6 w-6" aria-hidden="true" />
+                          <MenuIcon className="w-6 h-6" aria-hidden="true" />
                         </Popover.Button>
                       </div>
                     </div>
@@ -54,9 +45,9 @@ export default function Hero({ products }) {
                 leaveTo="opacity-0 scale-95"
               ></Transition>
             </Popover>
-            <main className="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+            <main className="px-4 mx-auto mt-10 max-w-7xl sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
               <div className="sm:text-center lg:text-left">
-                <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+                <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
                   <span className="block xl:inline"></span> Outdoor
                   <span className="block text-indigo-600 xl:inline">
                     Gear Zone
@@ -71,7 +62,7 @@ export default function Hero({ products }) {
                   <div className="rounded-md shadow">
                     <a
                       href="#"
-                      className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10"
+                      className="flex items-center justify-center w-full px-8 py-3 text-base font-medium text-white bg-indigo-600 border border-transparent rounded-md hover:bg-indigo-700 md:py-4 md:text-lg md:px-10"
                     >
                       Get started
                     </a>
@@ -79,7 +70,7 @@ export default function Hero({ products }) {
                   <div className="mt-3 sm:mt-0 sm:ml-3">
                     <a
                       href="#"
-                      className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10"
+                      className="flex items-center justify-center w-full px-8 py-3 text-base font-medium text-indigo-700 bg-indigo-100 border border-transparent rounded-md hover:bg-indigo-200 md:py-4 md:text-lg md:px-10"
                     >
                       Live demo
                     </a>
@@ -98,20 +89,20 @@ export default function Hero({ products }) {
           />
         </div>
       </div>
-      <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
+      <div className="max-w-2xl px-4 py-16 mx-auto sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
         <h2 className="text-2xl font-extrabold tracking-tight text-gray-900">
           Products
         </h2>
-        <div className="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+        <div className="grid grid-cols-1 mt-6 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
           {products.edges.map((product) => (
-            <div key={product.node.title} className="group relative">
-              <div className="w-full min-h-80 bg-gray-200 aspect-w-4 aspect-h-3 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
+            <div key={product.node.title} className="relative group">
+              <div className="w-full overflow-hidden bg-gray-200 rounded-md min-h-80 aspect-w-4 aspect-h-3 group-hover:opacity-75 lg:h-80 lg:aspect-none">
                 <img
                   src={product.node.images.edges[0].node.transformedSrc}
-                  className="w-full h-full object-center object-cover lg:w-full lg:h-full"
+                  className="object-cover object-center w-full h-full lg:w-full lg:h-full"
                 />
               </div>
-              <div className="mt-4 flex justify-between">
+              <div className="flex justify-between mt-4">
                 <div>
                   <h3 className="text-sm text-gray-700">
                     <a href={product.href}>
