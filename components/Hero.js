@@ -28,7 +28,7 @@ export default function Hero({ products }) {
             style={{
               backgroundImage:
                 "url(" +
-                "https://images.unsplash.com/photo-1422190441165-ec2956dc9ecc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1600&q=80" +
+                "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?crop=entropy\u0026cs=tinysrgb\u0026fit=max\u0026fm=jpg\u0026ixid=MnwyODQ4Mjl8MHwxfHNlYXJjaHwxfHxoZWFkcGhvbmVzfGVufDB8fHx8MTY0MDYwMjUwNQ\u0026ixlib=rb-1.2.1\u0026q=80\u0026w=1080" +
                 ")",
             }}
           >
