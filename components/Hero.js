@@ -35,7 +35,7 @@ export default function Hero({ products }) {
             <div className="container mx-auto">
               <div className="flex flex-col items-center w-full px-6 tracking-wide lg:w-1/2 md:ml-16 md:items-start">
                 <p className="my-4 text-2xl text-black">
-                  Stripy Zig Zag Jigsaw Pillow and Duvet Set
+                  Bluetooth Wireless Headphones
                 </p>
                 <a
                   className="inline-block text-xl leading-relaxed no-underline border-b border-gray-600 hover:text-black hover:border-black"
