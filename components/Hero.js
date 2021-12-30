@@ -73,11 +73,11 @@ export default function Hero({ products }) {
           style={{ height: "50vh" }}
         >
           <div
-            className="flex block w-full h-full pt-6 mx-auto bg-right bg-cover md:pt-0 md:items-center"
+            className="block w-full h-full pt-6 mx-auto bg-right bg-cover md:pt-0 md:items-center"
             style={{
               backgroundImage:
                 "url(" +
-                "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjM0MTM2fQ&auto=format&fit=crop&w=1600&q=80" +
+                "https://images.unsplash.com/photo-1501612164070-9919a55f7563?crop=entropy" +
                 ")",
             }}
           >

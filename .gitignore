@@ -33,4 +33,4 @@ yarn-error.log*
 # vercel
 .vercel
 
-unsplash.rest
+post.rest
