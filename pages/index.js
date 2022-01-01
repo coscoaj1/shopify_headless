@@ -1,17 +1,13 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import Header from '../components/Header';
 import Hero from '../components/Hero';
-import Footer from '../components/Footer';
 import React, { useEffect } from 'react';
 import { storefront } from '../utils';
 
 export default function Home({ products }) {
 	return (
 		<div className="w-full h-screen">
-			<Header />
 			<Hero products={products} />
-			<Footer />
 		</div>
 	);
 }
