@@ -29,7 +29,7 @@ export default function ProductList({ products }) {
 											</h3>
 										</div>
 										<p className="text-sm font-medium text-gray-900">
-											{product.priceRange.minVariantPrice.amount}
+											{`$${product.priceRange.minVariantPrice.amount}`}
 										</p>
 									</div>
 								</div>
