@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import ProductList from "./ProductList";
+import Link from "next/link";
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
 
@@ -36,12 +37,11 @@ export default function Hero({ products }) {
                   <p className="my-4 text-2xl text-black">
                     Bluetooth Wireless Headphones
                   </p>
-                  <a
-                    className="inline-block text-xl leading-relaxed no-underline border-b border-gray-600 hover:text-black hover:border-black"
-                    href="#"
-                  >
-                    view product
-                  </a>
+                  <Link href={`/products/wireless-headphones`}>
+                    <a className="inline-block text-xl leading-relaxed no-underline border-b border-gray-600 hover:text-black hover:border-black">
+                      view product
+                    </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -61,21 +61,18 @@ export default function Hero({ products }) {
                   <p className="my-4 text-2xl text-gray-200">
                     Ray Ban Sunglasses
                   </p>
-                  <button>
-                    <a
-                      className="inline-block text-xl leading-relaxed text-gray-200 no-underline border-b border-gray-300 cursor-pointer"
-                      href="#"
-                    >
+                  <Link href={`/products/ray-ban-sunglasses`}>
+                    <a className="inline-block text-xl leading-relaxed text-gray-200 no-underline border-b border-gray-300 cursor-pointer">
                       view product
                     </a>
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
           </div>
           <div className="keen-slider__slide number-slide3">
             <div
-              className="flex block w-full h-full pt-6 mx-auto bg-bottom bg-cover md:pt-0 md:items-center"
+              className="flex w-full h-full pt-6 mx-auto bg-bottom bg-cover md:pt-0 md:items-center"
               style={{
                 backgroundImage:
                   "url(" +
@@ -86,12 +83,11 @@ export default function Hero({ products }) {
               <div className="container mx-auto">
                 <div className="flex flex-col items-center w-full px-6 tracking-wide lg:w-1/2 md:ml-16 md:items-start">
                   <p className="my-4 text-2xl text-gray-200">Nike Sneakers</p>
-                  <a
-                    className="inline-block text-xl text-gray-200 leading-relaxed no-underline border-b border-gray-200"
-                    href="#"
-                  >
-                    view product
-                  </a>
+                  <Link href={`/products/nike-sneakers`}>
+                    <a className="inline-block text-xl text-gray-200 leading-relaxed no-underline border-b border-gray-200">
+                      view product
+                    </a>
+                  </Link>
                 </div>
               </div>
             </div>
