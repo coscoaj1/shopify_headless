@@ -183,7 +183,6 @@ export default function Hero({ products }) {
 					</li>
 				</ol>
 			</div>
-			<ProductList products={products} />
 		</div>
 	);
 }

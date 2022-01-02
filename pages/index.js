@@ -1,13 +1,13 @@
-import Head from 'next/head';
-import Image from 'next/image';
+import ProductList from '../components/ProductList';
 import Hero from '../components/Hero';
 import React, { useEffect } from 'react';
 import { storefront } from '../utils';
 
 export default function Home({ products }) {
 	return (
-		<div className="w-full h-screen">
+		<div className="w-full h-auto">
 			<Hero products={products} />
+			<ProductList products={products} />
 		</div>
 	);
 }
@@ -25,7 +25,7 @@ export async function getStaticProps() {
 const gql = String.raw;
 const productsQuery = gql`
 	query Products {
-		products(first: 4) {
+		products(first: 8) {
 			edges {
 				node {
 					title
