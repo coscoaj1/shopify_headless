@@ -1,188 +1,163 @@
-import React from 'react';
-import Image from 'next/image';
-import ProductList from './ProductList';
-import Link from 'next/link';
+import React, { useState } from "react";
+import Image from "next/image";
+import ProductList from "./ProductList";
+import "keen-slider/keen-slider.min.css";
+import { useKeenSlider } from "keen-slider/react";
 
 export default function Hero({ products }) {
-	console.log({ products });
-	console.log(products.edges[1].node.handle);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [loaded, setLoaded] = useState(false);
+  const [sliderRef, instanceRef] = useKeenSlider({
+    initial: 0,
+    slideChanged(slider) {
+      setCurrentSlide(slider.track.details.rel);
+    },
+    created() {
+      setLoaded(true);
+    },
+  });
+  console.log({ products });
+  return (
+    <>
+      <div className="w-full h-auto navigation-wrapper">
+        <div ref={sliderRef} className="keen-slider h-96 ">
+          <div className="keen-slider__slide number-slide1">
+            <div
+              className="flex w-full h-full pt-6 mx-auto bg-right bg-cover md:pt-0 md:items-center"
+              style={{
+                backgroundImage:
+                  "url(" +
+                  "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?crop=entropy\u0026cs=tinysrgb\u0026fit=max\u0026fm=jpg\u0026ixid=MnwyODQ4Mjl8MHwxfHNlYXJjaHwxfHxoZWFkcGhvbmVzfGVufDB8fHx8MTY0MDYwMjUwNQ\u0026ixlib=rb-1.2.1\u0026q=80\u0026w=1080" +
+                  ")",
+              }}
+            >
+              <div className="container mx-auto">
+                <div className="flex flex-col items-center w-full px-6 tracking-wide lg:w-1/2 md:ml-16 md:items-start ">
+                  <p className="my-4 text-2xl text-black">
+                    Bluetooth Wireless Headphones
+                  </p>
+                  <a
+                    className="inline-block text-xl leading-relaxed no-underline border-b border-gray-600 hover:text-black hover:border-black"
+                    href="#"
+                  >
+                    view product
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="keen-slider__slide number-slide2">
+            <div
+              className="flex w-full h-full pt-6 mx-auto bg-right bg-cover md:pt-0 md:items-center"
+              style={{
+                backgroundImage:
+                  "url(" +
+                  "https://images.unsplash.com/photo-1501612164070-9919a55f7563?crop=entropy" +
+                  ")",
+              }}
+            >
+              <div className="container mx-auto">
+                <div className="flex flex-col items-center w-full pl-24 tracking-wide lg:w-1/2 md:ml-16 md:items-start ">
+                  <p className="my-4 text-2xl text-gray-200">
+                    Ray Ban Sunglasses
+                  </p>
+                  <button>
+                    <a
+                      className="inline-block text-xl leading-relaxed text-gray-200 no-underline border-b border-gray-300 cursor-pointer"
+                      href="#"
+                    >
+                      view product
+                    </a>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="keen-slider__slide number-slide3">
+            <div
+              className="flex block w-full h-full pt-6 mx-auto bg-bottom bg-cover md:pt-0 md:items-center"
+              style={{
+                backgroundImage:
+                  "url(" +
+                  "https://images.unsplash.com/photo-1542291026-7eec264c27ff?crop=entropy\u0026cs=tinysrgb\u0026fit=max\u0026fm=jpg\u0026ixid=MnwyODQ4Mjl8MHwxfHNlYXJjaHwxfHxuaWtlJTIwc25lYWtlcnN8ZW58MHx8fHwxNjQwOTQyMjcy\u0026ixlib=rb-1.2.1\u0026q=80\u0026w=1080" +
+                  ")",
+              }}
+            >
+              <div className="container mx-auto">
+                <div className="flex flex-col items-center w-full px-6 tracking-wide lg:w-1/2 md:ml-16 md:items-start">
+                  <p className="my-4 text-2xl text-gray-200">Nike Sneakers</p>
+                  <a
+                    className="inline-block text-xl text-gray-200 leading-relaxed no-underline border-b border-gray-200"
+                    href="#"
+                  >
+                    view product
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {loaded && instanceRef.current && (
+          <>
+            <Arrow
+              left
+              onClick={(e) =>
+                e.stopPropagation() || instanceRef.current?.prev()
+              }
+              disabled={currentSlide === 0}
+            />
 
-	return (
-		<div
-			className="container relative mx-auto carousel"
-			style={{ maxWidth: '1600px' }}
-		>
-			<div className="relative w-full overflow-hidden carousel-inner">
-				<input
-					className="hidden carousel-open"
-					type="radio"
-					id="carousel-1"
-					name="carousel"
-					aria-hidden="true"
-					hidden=""
-					defaultChecked={true}
-				/>
-				<div
-					className="absolute opacity-0 carousel-item"
-					style={{ height: '50vh' }}
-				>
-					<div
-						className="flex w-full h-full pt-6 mx-auto bg-right bg-cover md:pt-0 md:items-center"
-						style={{
-							backgroundImage:
-								'url(' +
-								'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?crop=entropy\u0026cs=tinysrgb\u0026fit=max\u0026fm=jpg\u0026ixid=MnwyODQ4Mjl8MHwxfHNlYXJjaHwxfHxoZWFkcGhvbmVzfGVufDB8fHx8MTY0MDYwMjUwNQ\u0026ixlib=rb-1.2.1\u0026q=80\u0026w=1080' +
-								')',
-						}}
-					>
-						<div className="container mx-auto">
-							<div className="flex flex-col items-center w-full px-6 tracking-wide lg:w-1/2 md:ml-16 md:items-start ">
-								<p className="my-4 text-2xl text-black">
-									Bluetooth Wireless Headphones
-								</p>
-								<Link href={`/products/wireless-headphones`}>
-									<a className="inline-block text-xl leading-relaxed no-underline border-b border-gray-600 hover:text-black hover:border-black">
-										view product
-									</a>
-								</Link>
-							</div>
-						</div>
-					</div>
-				</div>
-				<label
-					htmlFor="carousel-3"
-					className="absolute inset-y-0 left-0 z-10 hidden w-10 h-10 my-auto ml-2 text-3xl font-bold leading-tight text-center text-black bg-white rounded-full cursor-pointer prev control-1 md:ml-10 hover:text-white hover:bg-gray-900"
-				>
-					‹
-				</label>
-				<label
-					htmlFor="carousel-2"
-					className="absolute inset-y-0 right-0 z-10 hidden w-10 h-10 my-auto mr-2 text-3xl font-bold leading-tight text-center text-black bg-white rounded-full cursor-pointer next control-1 md:mr-10 hover:text-white hover:bg-gray-900"
-				>
-					›
-				</label>
+            <Arrow
+              onClick={(e) =>
+                e.stopPropagation() || instanceRef.current?.next()
+              }
+              disabled={
+                currentSlide ===
+                instanceRef.current.track.details.slides.length - 1
+              }
+            />
+          </>
+        )}
+      </div>
+      {loaded && instanceRef.current && (
+        <div className="dots">
+          {[
+            ...Array(instanceRef.current.track.details.slides.length).keys(),
+          ].map((idx) => {
+            return (
+              <button
+                key={idx}
+                onClick={() => {
+                  instanceRef.current?.moveToIdx(idx);
+                }}
+                className={"dot" + (currentSlide === idx ? " active" : "")}
+              ></button>
+            );
+          })}
+        </div>
+      )}
+      <ProductList products={products} />
+    </>
+  );
+}
 
-				<input
-					className="hidden carousel-open"
-					type="radio"
-					id="carousel-2"
-					name="carousel"
-					aria-hidden="true"
-					hidden=""
-				/>
-				<div
-					className="absolute bg-right bg-cover opacity-0 carousel-item"
-					style={{ height: '50vh' }}
-				>
-					<div
-						className="flex w-full h-full pt-6 mx-auto bg-right bg-cover md:pt-0 md:items-center"
-						style={{
-							backgroundImage:
-								'url(' +
-								'https://images.unsplash.com/photo-1501612164070-9919a55f7563?crop=entropyu0026cs=tinysrgb\u0026fit=max\u0026fm=jpg\u0026ixid=MnwyODQ4Mjl8MHwxfHNlYXJjaHwxfHxoZWFkcGhvbmVzfGVufDB8fHx8MTY0MDYwMjUwNQ\u0026ixlib=rb-1.2.1\u0026q=80\u0026w=1080' +
-								')',
-						}}
-					>
-						<div className="container mx-auto">
-							<div className="flex flex-col items-center w-full px-6 tracking-wide lg:w-1/2 md:ml-16 md:items-start ">
-								<p className="my-4 text-2xl text-gray-200">
-									Ray Ban Sunglasses
-								</p>
-								<Link href={`/products/ray-ban-sunglasses`}>
-									<a className="inline-block text-xl leading-relaxed no-underline border-b border-gray-200 text-gray-200">
-										view product
-									</a>
-								</Link>
-							</div>
-						</div>
-					</div>
-				</div>
-				<label
-					htmlFor="carousel-1"
-					className="absolute inset-y-0 left-0 z-10 hidden w-10 h-10 my-auto ml-2 text-3xl font-bold leading-tight text-center text-black bg-white rounded-full cursor-pointer prev control-2 md:ml-10 hover:text-white hover:bg-gray-900"
-				>
-					‹
-				</label>
-				<label
-					htmlFor="carousel-3"
-					className="absolute inset-y-0 right-0 z-10 hidden w-10 h-10 my-auto mr-2 text-3xl font-bold leading-tight text-center text-black bg-white rounded-full cursor-pointer next control-2 md:mr-10 hover:text-white hover:bg-gray-900"
-				>
-					›
-				</label>
-
-				<input
-					className="hidden carousel-open"
-					type="radio"
-					id="carousel-3"
-					name="carousel"
-					aria-hidden="true"
-					hidden=""
-				/>
-				<div
-					className="absolute opacity-0 carousel-item"
-					style={{ height: '50vh' }}
-				>
-					<div
-						className="flex w-full h-full pt-6 mx-auto bg-bottom bg-cover md:pt-0 md:items-center"
-						style={{
-							backgroundImage:
-								'url(' +
-								'https://images.unsplash.com/photo-1542291026-7eec264c27ff?crop=entropy\u0026cs=tinysrgb\u0026fit=max\u0026fm=jpg\u0026ixid=MnwyODQ4Mjl8MHwxfHNlYXJjaHwxfHxuaWtlJTIwc25lYWtlcnN8ZW58MHx8fHwxNjQwOTQyMjcy\u0026ixlib=rb-1.2.1\u0026q=80\u0026w=1080' +
-								')',
-						}}
-					>
-						<div className="container mx-auto">
-							<div className="flex flex-col items-center w-full px-6 tracking-wide lg:w-1/2 md:ml-16 md:items-start  border border-white">
-								<p className="my-4 text-2xl text-gray-200">Nike Sneakers</p>
-								<Link href={`/products/nike-sneakers`}>
-									<a className="inline-block text-xl leading-relaxed no-underline border-b border-gray-200 text-gray-200">
-										view product
-									</a>
-								</Link>
-							</div>
-						</div>
-					</div>
-				</div>
-				<label
-					htmlFor="carousel-2"
-					className="absolute inset-y-0 left-0 z-10 hidden w-10 h-10 my-auto ml-2 text-3xl font-bold leading-tight text-center text-black bg-white rounded-full cursor-pointer prev control-3 md:ml-10 hover:text-white hover:bg-gray-900"
-				>
-					‹
-				</label>
-				<label
-					htmlFor="carousel-1"
-					className="absolute inset-y-0 right-0 z-10 hidden w-10 h-10 my-auto mr-2 text-3xl font-bold leading-tight text-center text-black bg-white rounded-full cursor-pointer next control-3 md:mr-10 hover:text-white hover:bg-gray-900"
-				>
-					›
-				</label>
-
-				<ol className="carousel-indicators">
-					<li className="inline-block mr-3">
-						<label
-							htmlFor="carousel-1"
-							className="block text-4xl text-gray-400 cursor-pointer carousel-bullet hover:text-gray-900"
-						>
-							•
-						</label>
-					</li>
-					<li className="inline-block mr-3">
-						<label
-							htmlFor="carousel-2"
-							className="block text-4xl text-gray-400 cursor-pointer carousel-bullet hover:text-gray-900"
-						>
-							•
-						</label>
-					</li>
-					<li className="inline-block mr-3">
-						<label
-							htmlFor="carousel-3"
-							className="block text-4xl text-gray-400 cursor-pointer carousel-bullet hover:text-gray-900"
-						>
-							•
-						</label>
-					</li>
-				</ol>
-			</div>
-		</div>
-	);
+function Arrow(props) {
+  const disabeld = props.disabled ? " arrow--disabled" : "";
+  return (
+    <svg
+      onClick={props.onClick}
+      className={`arrow ${
+        props.left ? "arrow--left" : "arrow--right"
+      } ${disabeld}`}
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+    >
+      {props.left && (
+        <path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z" />
+      )}
+      {!props.left && (
+        <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" />
+      )}
+    </svg>
+  );
 }
