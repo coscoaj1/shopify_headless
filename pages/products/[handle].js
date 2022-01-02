@@ -51,13 +51,13 @@ export default function Example({ product, products }) {
 	}
 	return (
 		<div className="bg-white">
-			<div className="pt-12">
+			<div className="pt-4">
 				<div className="max-w-2xl mx-auto sm:block grid place-items-center">
 					<Image
 						src={image.transformedSrc}
 						alt={image.altText}
-						width={600}
-						height={600}
+						width={500}
+						height={500}
 						className="rounded-lg"
 					/>
 				</div>
