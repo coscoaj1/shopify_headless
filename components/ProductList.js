@@ -13,18 +13,13 @@ export default function ProductList({ products }) {
 					const image = product.images.edges[0].node;
 					return (
 						<Link key={product.title} href={`/products/${product.handle}`}>
-							<a className="relative group">
-								<div>
-									<div className="w-full min-h-80 aspect-w-4 aspect-h-3 group-hover:opacity-75 lg:h-80 ">
+							<a className="relative w-full group min-h-80 aspect-w-4 aspect-h-3 group-hover:opacity-75 lg:h-80">
 										<Image
 											alt={image.altText}
 											src={image.transformedSrc}
 											layout="fill"
-											className="rounded-lg object-cover object-center w-full h-full lg:w-full lg:h-full"
+											className="object-cover object-center w-full h-full rounded-lg lg:w-full lg:h-full"
 										/>
-									</div>
-								</div>
-
 								<div className="flex justify-between mt-4">
 									<div className="">
 										<h3 className="text-sm text-gray-700 ">
