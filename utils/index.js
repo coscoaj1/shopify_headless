@@ -1,4 +1,3 @@
-import { responseSymbol } from "next/dist/server/web/spec-compliant/fetch-event";
 
 export async function storefront(query, variables = {}) {
   const result = await fetch(
