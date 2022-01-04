@@ -159,7 +159,7 @@ export default function Example({ product, products }) {
                   alt={relatedImage.altText}
                   width={350}
                   height={400}
-                  className="object-cover rounded-lg"
+                  className="object-cover rounded-lg hover:opacity-75"
                 />
                 <div className="flex items-center justify-between mt-4 space-x-8 text-base font-medium text-gray-900">
                   <h3>
