@@ -12,11 +12,8 @@ export default function ProductList({ products }) {
           const product = item.node;
           const image = product.images.edges[0].node;
           return (
-            <div className="group mx-auto">
-              <div
-                key={product.handle}
-                className="relative rounded-lg group-hover:opacity-75"
-              >
+            <div key={product.handle} className="group mx-auto">
+              <div className="relative rounded-lg group-hover:opacity-75">
                 <Image
                   src={image.transformedSrc}
                   alt={image.altText}
