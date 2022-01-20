@@ -11,7 +11,7 @@
 
 ## General info
 
-A simple e-commerce site built with Next.js, Tailwind and Shopify Storefront API
+A simple e-commerce site built with Next.js, Tailwind and Shopify GraphQL Storefront API. 
 
 
 ## Technologies
