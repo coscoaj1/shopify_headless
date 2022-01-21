@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 
-
 import { StarIcon } from "@heroicons/react/solid";
 
 const reviews = { href: "#", average: 4, totalCount: 117 };
@@ -134,7 +133,7 @@ export default function Example({ product, products }) {
       </div>
 
       {/* Related Products */}
-      <div className="mx-auto mt-24 max-w-7xl">
+      <div className="mx-auto mt-24 max-w-7xl px-8">
         <div className="flex items-center justify-between space-x-4">
           <h2 className="text-lg font-medium text-gray-900">
             Customers also viewed
